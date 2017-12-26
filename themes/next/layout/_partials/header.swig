@@ -8,7 +8,6 @@
         </a>
       </div>
     {% endif %}
-
     <div class="custom-logo-site-title">
       <a href="{{ config.root }}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -22,7 +21,6 @@
         <p class="site-subtitle">{{ config.subtitle }}</p>
       {% endif %}
   </div>
-
   <div class="site-nav-toggle">
     <button>
       <span class="btn-bar"></span>
@@ -31,10 +29,8 @@
     </button>
   </div>
 </div>
-
 <nav class="site-nav">
   {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.tinysou_Key || theme.local_search.enable %}
-
   {% if theme.menu %}
     <ul id="menu" class="menu">
       {% for name, path in theme.menu %}
@@ -48,7 +44,6 @@
           </a>
         </li>
       {% endfor %}
-
       {% if hasSearch %}
         <li class="menu-item menu-item-search">
           {% if theme.swiftype_key %}
@@ -65,12 +60,10 @@
       {% endif %}
     </ul>
   {% endif %}
-
   {% if hasSearch %}
     <div class="site-search">
       {% include 'search.swig' %}
     </div>
   {% endif %}
 </nav>
-
 {% include '../_custom/header.swig' %}

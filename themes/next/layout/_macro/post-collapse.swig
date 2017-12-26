@@ -1,8 +1,6 @@
 {% macro render(post) %}
-
   <article class="post post-type-{{ post.type | default('normal') }}" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-
       <{% if theme.seo %}h3{% else %}h2{% endif %} class="post-title">
         {% if post.link %}{# Link posts #}
           <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}" itemprop="url">
@@ -19,7 +17,6 @@
             </a>
         {% endif %}
       </{% if theme.seo %}h3{% else %}h2{% endif %}>
-
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="{{ moment(post.date).format() }}"
@@ -27,8 +24,6 @@
           {{ date(post.date, 'MM-DD') }}
         </time>
       </div>
-
     </header>
   </article>
-
 {% endmacro %}
