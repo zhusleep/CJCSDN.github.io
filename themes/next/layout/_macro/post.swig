@@ -339,7 +339,12 @@
         {% include 'wechat-subscriber.swig' %}
       </div>
     {% endif %}
-
+    
+    <!--文章末尾结束标记 start-->
+    {% if not is_index %}
+      {% include 'passage-end-tag.swig' %}
+    {% endif %}
+    <!--文章末尾结束标记 END-->
     {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
       <div>
         {% include 'reward.swig' %}
@@ -356,7 +361,7 @@
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"><!--#换成图形标签<i class="fa fa-tag"></i>--></i> {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}
