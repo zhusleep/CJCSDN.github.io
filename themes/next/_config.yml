@@ -40,10 +40,11 @@ footer:
   since: 2017
 
   # Icon between year and copyright info.
-  icon: user
+  #修改底部五角星图形
+  icon: star
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright:
+  copyright: 
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: true

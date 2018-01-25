@@ -340,11 +340,11 @@
       </div>
     {% endif %}
     
-    <!--文章末尾结束标记 start-->
+    {# 文章末尾结束标记 start #}
     {% if not is_index %}
       {% include 'passage-end-tag.swig' %}
     {% endif %}
-    <!--文章末尾结束标记 END-->
+    {# 文章末尾结束标记 END #}
     {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
       <div>
         {% include 'reward.swig' %}
