@@ -9,6 +9,8 @@
 <head>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
+  {#谷歌字体#}
+  <link href='//fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   {% include '_third-party/analytics/index.swig' %}
 </head>
 

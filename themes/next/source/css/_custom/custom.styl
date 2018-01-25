@@ -3,8 +3,11 @@
 html.mist{
   .site-title{
     //头部logo字体谷歌样式
-    //font-family: 'Kaushan Script', cursive;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2em;
+    line-height: 1.4em;
     }
+  //文章添加阴影效果
   .post{
     margin-top:60px;
     .post-block {
@@ -20,6 +23,38 @@ html.mist{
         text-align: center;
         color: #ccc;
       }
+    }
+  }
+  .site-author-image{
+    max-width: 155px;
+  }
+  //自定义移动端布局
+  @media (max-width: 767px) {
+    .menu {
+      margin: 10px auto;
+      padding: 0;
+    }
+    .site-meta {
+      margin-left: 0;
+        .site-title {
+        line-height: 28px;
+      }
+    }
+    .header-inner {
+      width: auto;
+      margin-bottom: 50px;
+      padding: 10px 10px 0;
+      .site-brand-wrapper{
+        margin-bottom: 10px;
+        content: " ";
+        display: table;
+        clear: both;
+        width: 100%;
+      }
+    }
+    .container .main-inner {
+      width: auto;
+      margin-top: 0;
     }
   }
 }
