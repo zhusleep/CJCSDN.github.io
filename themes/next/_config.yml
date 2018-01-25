@@ -41,7 +41,7 @@ footer:
 
   # Icon between year and copyright info.
   #修改底部五角星图形
-  icon: star
+  icon: heart
 
   # If not defined, will be used `author` from Hexo main config.
   copyright: 
