@@ -40,7 +40,7 @@ footer:
   since: 2017
 
   # Icon between year and copyright info.
-  #修改底部五角星图形
+  #修改底部心型图形
   icon: heart
 
   # If not defined, will be used `author` from Hexo main config.
