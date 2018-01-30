@@ -47,11 +47,11 @@ footer:
   copyright: 
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: true
+  powered: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
     version: false
   # -------------------------------------------------------------
@@ -219,17 +219,17 @@ auto_excerpt:
 # Post meta display settings
 post_meta:
   item_text: true
-  created_at: true
-  updated_at: false
-  categories: true
+  created_at: true #发布时间
+  updated_at: false #更新时间
+  categories: true #分类
 
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
-  totalcount: false
+  wordcount: true #单篇字数统计
+  min2read: true #单篇阅读时长
+  totalcount: false #站点字数统计
   separated_meta: true
 
 # Wechat Subscriber
@@ -247,8 +247,8 @@ post_wordcount:
 # Declare license on posts
 post_copyright:
   enable: true
-  license: CC BY-NC-SA 3.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
+  license: CC BY-NC-ND 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh
 
 
 # ---------------------------------------------------------------
@@ -552,7 +552,7 @@ busuanzi_count:
   site_uv_header: <i class="fa fa-user"></i> 本站访客数
   site_uv_footer: 人次
   # custom pv span for the whole site
-  site_pv: true
+  site_pv: false
   site_pv_header: <i class="fa fa-eye"></i> 本站总访问量
   site_pv_footer: 次
   # custom pv span for one page only
