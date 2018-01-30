@@ -3,4 +3,4 @@ title: 关于我们
 date: 2017-12-26 16:13:25
 type: "about"
 ---
-这是关于我们页面
+![GitHub Logo](../uploads/photos-1.jpg)

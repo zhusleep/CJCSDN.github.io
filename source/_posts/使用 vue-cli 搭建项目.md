@@ -1,11 +1,11 @@
 ---
-title: demo01
+title: 使用 vue-cli 搭建项目
 date: 2017-12-16 16:54:23
 tags: 
-    - demo01
-    - Testing
-    - Another Tag
-categories: Testing
+    - 使用 vue-cli 搭建项目
+    - vue
+    - vue-cli
+categories: 使用 vue-cli 搭建项目
 photos:
 - http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg
 ---

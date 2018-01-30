@@ -6,5 +6,7 @@ tags:
     - Testing
     - Another Tag
 categories: Testing
+photos:
+- http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg
 ---
 你好欢迎来到我的技术分享博客站。
