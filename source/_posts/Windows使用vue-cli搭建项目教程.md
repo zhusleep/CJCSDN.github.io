@@ -5,13 +5,13 @@ tags:
     - 使用 vue-cli 搭建项目
     - vue
     - vue-cli
-categories: 使用 vue-cli 搭建项目
+categories: vue
 ---
 
 # 一、环境介绍
 **1、Node.js:** javascript运行环境(runtime),不同系统直接运行各种编程语言。
 **2、npm:** Nodejs下的包管理器。由于国内使用npm会很慢,这里推荐使用淘宝NPM镜像 [https://npm.taobao.org](https://npm.taobao.org/)
-```
+```npm
 $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 **3、webpack:** 它主要的用途是通过 CommonJS 的语法把所有浏览器端需要发布的静态资源做相应的准备，比如资源的合并和打包。
