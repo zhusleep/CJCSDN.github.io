@@ -84,14 +84,19 @@ deploy:
 ```
 3、依次执行
 ```
-$ git add .
-$ git commit -m “…” //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
-$ git push origin hexo //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
+$ git add .             //注意最后的.(点号),这个.(点号)表示当前目录
+$ git commit -m “…”     //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
+$ git push origin hexo  //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
 ```
-4、执行 `$ hexo generate -d` 生成网站并部署到GitHub上。它是下面两条命令的简写：
+4、执行
+```
+$ hexo clean        //清除缓存和已生成的静态文件
+$ hexo generate -d  //生成静态文件并部署
+```
+生成网站并部署到GitHub上。`$ hexo generate -d`它是下面两条命令的简写：
 ```
 $ hexo generate   //自动生成静态文件 (public)
-$ hexo deploy   //将生成的静态页面部署到GitHub master分支上用于展示
+$ hexo deploy     //将生成的静态页面部署到GitHub master分支上用于展示
 ```
 如果部署不生效运行 `$ hexo clean` 清除缓存文件 (db.json) 和已生成的静态文件 (public)。然后再运行 `$ hexo deploy clean` 部署到GitHub刷新页面查看。
 ***关于部署这一点做一个延伸：就是生成后的静态文件代码不是压缩的，所以如需要压缩再部署按照如下步骤进行。**
@@ -138,9 +143,10 @@ gulp.task('default', [
 ```
 替换第4步骤，生成网站并部署到GitHub上依次执行：
 ```
-$ hexo generate //自动生成静态文件 (public)
-$ gulp         //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
-$ hexo deploy //将压缩的静态页面部署到GitHub master分支上用于展示
+$ hexo clean     //清除缓存和已生成的静态文件
+$ hexo generate  //自动生成静态文件 (public)
+$ gulp           //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
+$ hexo deploy    //将压缩的静态页面部署到GitHub master分支上用于展示
 ```
 5、本地启动服务器`$ hexo server`。默认情况下，访问网址为： http://localhost:4000/
 
@@ -153,15 +159,16 @@ $ hexo deploy //将压缩的静态页面部署到GitHub master分支上用于展
 在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：
 1、依次执行
 ```
-$ git add .
-$ git commit -m “…” //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
-$ git push origin hexo //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
+$ git add .             //注意最后的.(点号),这个.(点号)表示当前目录
+$ git commit -m “…”     //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
+$ git push origin hexo  //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
 ```
 2、然后再依次执行
 ```
-$ hexo generate //自动生成静态文件 (public)
-$ gulp         //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
-$ hexo deploy //将压缩的静态页面部署到GitHub master分支上用于展示
+$ hexo clean     //清除缓存和已生成的静态文件
+$ hexo generate  //自动生成静态文件 (public)
+$ gulp           //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
+$ hexo deploy    //将压缩的静态页面部署到GitHub master分支上用于展示
 ```
 ***注意： 每次换电脑进行博客更新时，不管上次在其他电脑有没有更新，最好先执行`$ git pull`拉取远程库上最新数据**
 
@@ -175,6 +182,18 @@ $ npm install
 $ npm install hexo-deployer-git //（此时当前分支应显示为hexo，记得，不需要`hexo init`这条指令）
 ```
 然后就可以修改推送等操作了。
+
+### 部署常用命令流程
+```
+$ hexo new "postName"   //新建文章,hexo官网有详细说明
+$ git add .             //注意最后的.(点号),这个.(点号)表示当前目录
+$ git commit -m “…”     //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
+$ git push origin hexo  //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
+$ hexo clean            //清除缓存和已生成的静态文件
+$ hexo generate         //自动生成静态文件 (public)
+$ gulp                  //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
+$ hexo deploy           //将压缩的静态页面部署到GitHub master分支上用于展示
+```
 ## 五、参考文献
 http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more
 https://www.cnblogs.com/visugar/p/6821777.html
