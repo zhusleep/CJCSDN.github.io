@@ -68,4 +68,117 @@ $ git push origin dev:dev              // 提交本地dev分支作为远程的te
 ```
 
 ### 开始安装HEXO
-1、所有必备的准备和必备应用程序安装完成后，即可使用 npm 安装 Hexo[中文官网地址](https://hexo.io/zh-cn/docs/)。在本地CJCSDN.github.io文件夹下通过Git bash依次执行npm install -g hexo-cli、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;
+1、所有准备完成后，即可使用 npm 安装 [Hexo](https://hexo.io/zh-cn/docs/)。在本地CJCSDN.github.io文件夹下通过Git bash依次执行：
+```
+$ npm install -g hexo-cli
+$ hexo init
+$ npm install
+$ npm install hexo-deployer-git //（此时当前分支应显示为hexo，如果不确定请看前面命令列出列表，切换设置为默认分支）
+```
+2、修改网站的配置信息_config.yml中的deploy参数，分支应为master
+```
+deploy:
+  type: git
+  repo: https://github.com/CJCSDN/CJCSDN.github.io.git
+  branch: master
+```
+3、依次执行
+```
+$ git add .
+$ git commit -m “…” //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
+$ git push origin hexo //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
+```
+4、执行 `$ hexo generate -d` 生成网站并部署到GitHub上。它是下面两条命令的简写：
+```
+$ hexo generate   //自动生成静态文件 (public)
+$ hexo deploy   //将生成的静态页面部署到GitHub master分支上用于展示
+```
+如果部署不生效运行 `$ hexo clean` 清除缓存文件 (db.json) 和已生成的静态文件 (public)。然后再运行 `$ hexo deploy clean` 部署到GitHub刷新页面查看。
+***关于部署这一点做一个延伸：就是生成后的静态文件代码不是压缩的，所以如需要压缩再部署按照如下步骤进行。**
+4-1、在本地站点的根目录（CJCSDN.github.io文件夹下，这是我的站点文件夹。）执行以下命令：
+```
+$ npm install gulp -g
+$ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
+```
+4-2、然后在站点根目录下新建`gulpfile.js`文件![站点根目录下新建gulpfile.js文件](012.png)，并填入以下JS代码内容。
+```javascript
+var gulp = require('gulp');
+var minifycss = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
+var htmlclean = require('gulp-htmlclean');
+// 压缩 public 目录 css
+gulp.task('minify-css', function() {
+    return gulp.src('./public/**/*.css')
+        .pipe(minifycss())
+        .pipe(gulp.dest('./public'));
+});
+// 压缩 public 目录 html
+gulp.task('minify-html', function() {
+  return gulp.src('./public/**/*.html')
+    .pipe(htmlclean())
+    .pipe(htmlmin({
+         removeComments: true,
+         minifyJS: true,
+         minifyCSS: true,
+         minifyURLs: true,
+    }))
+    .pipe(gulp.dest('./public'))
+});
+// 压缩 public/js 目录 js
+gulp.task('minify-js', function() {
+    return gulp.src('./public/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./public'));
+});
+// 执行 gulp 命令时执行的任务
+gulp.task('default', [
+    'minify-html','minify-css','minify-js'
+]);
+```
+替换第4步骤，生成网站并部署到GitHub上依次执行：
+```
+$ hexo generate //自动生成静态文件 (public)
+$ gulp         //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
+$ hexo deploy //将压缩的静态页面部署到GitHub master分支上用于展示
+```
+5、本地启动服务器`$ hexo server`。默认情况下，访问网址为： http://localhost:4000/
+
+***hexo 命令支持简写，自行查阅，这里就不多说了。**
+这样一来，在GitHub上的CJCSDN.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。
+自此hexo安装和部署就全部完成。更换主题，修改配置文件装饰等等后面在慢慢说。
+
+## 博客管理流程
+### 日常修改
+在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：
+1、依次执行
+```
+$ git add .
+$ git commit -m “…” //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
+$ git push origin hexo //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
+```
+2、然后再依次执行
+```
+$ hexo generate //自动生成静态文件 (public)
+$ gulp         //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
+$ hexo deploy //将压缩的静态页面部署到GitHub master分支上用于展示
+```
+***注意： 每次换电脑进行博客更新时，不管上次在其他电脑有没有更新，最好先执行`$ git pull`拉取远程库上最新数据**
+
+### 本地资料丢失情况
+当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
+1、使用 `$ git clone https://github.com/CJCSDN/CJCSDN.github.io.git` 拷贝仓库（默认分支为hexo）
+2、在本地新拷贝的CJCSDN.github.io文件夹下通过Git bash依次执行下列指令：
+```
+$ npm install hexo
+$ npm install
+$ npm install hexo-deployer-git //（此时当前分支应显示为hexo，记得，不需要`hexo init`这条指令）
+```
+然后就可以修改推送等操作了。
+## 参考文献
+http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more
+https://www.cnblogs.com/visugar/p/6821777.html
+http://dontcry2013.github.io/2016/03/02/hexo-change-workstation/
+http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000
+https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/markdown-basics?id=%e8%af%ad%e6%b3%95%e8%af%b4%e6%98%8e
