@@ -7,10 +7,10 @@ tags:
     - Github
 categories: HEXO
 ---
-## 前言
+## 一、前言
 过了很久回过头来写这篇文章，算是总结吧。因为一开始就想随便搞个博客啥的玩一下，力求简单简洁，不想自己搞站点啥的。所以找到了GitHub Pages，而且给我们提供域名和空间，省事！Github Pages 需要相应的博客引擎来驱动，主流的有两个 [Hexo](https://hexo.io/) 和 [jekyll](https://jekyllrb.com/)。一开始我用的是jekyll，真真感受到了那句经典的话：从入门到放弃！Orz...。git两者都要，为了push到github。而jekyll需要安装ruby，hexo需要nodejs。两者的官网直观感受和文档介绍详细以及易用性来说，我更倾向于Hexo。于是转用Hexo，后期补写的文章。
 
-## 配置环境
+## 二、配置环境
 ### 申请GitHub
 申请GitHub做博客的远程创库、域名、服务器等等，如果你有账号了也创建有库了可以跳过。这里只说申请账号，至于创建库我会在下面安装Hexo的时候会说到。github账号没有的话直接[github官网](https://github.com/)申请就行了（看不懂英文就百度翻译），跟一般的注册账号差不多，网上也有教程。还有网上很多人说的SSH Keys，看你自己了，可以不配制。我当时是用GitHub Desktop把库Clone到本地，因为我安装了Git，所以在Clone到本地的库文件夹内鼠标右键选择`Git Bash Here`也能管理自己的博客，包括修改提交等等操作。这里根据个人实际情况灵活处理，就不过多的啰嗦了。
 
@@ -24,7 +24,7 @@ categories: HEXO
 我的环境是Windows，所以安装git这里也没啥好说的。还有就是Git Bash命令和GitHub Desktop这些使用，网上一搜基本有很多教程。GitHub Desktop会更加方便些，界面处理。登录你的GitHub账号，把你的库Clone到你本地就好了，这个后面会说到。
 3、这里，我们要区分清楚git与github。git是一个版本控制的工具，而github就看做远程仓库，用于存放用git管理的各种项目。通俗说就是一个是工具，一个是存储的仓库。你通过操作这个工具来拉取和推送等方式管理你的仓库的东西。
 
-## 安装Hexo流程
+## 三、安装Hexo流程
 ### 安装前言
 安装Hexo相当简单。在安装之前我都会考虑长远一点，包括转移、hexo更新、主题更新、博文更新、markdown语法使用、多台设备管理操作等等。但是目前我只说下面的两种情况，一下说太多就会显得啰嗦，留到以后有时间在补上吧。我要说的两种情况是：
 1、第一种是如果只满足于简单的部署发布，在自己的GitHub账号下创建一个新的仓库，命名为username.github.io（username是你的账号名)，就完全够用了，因为这种情况Hexo部署到GitHub上的文件是.md（你的博文）转化之后的.html（静态网页），不会把你Hexo网站文件包括你的设置和一些IDKey放上去。。然后想绑定个人域名或者放到coding上的都根据自身情况决定了，因为网上也有很多教程。
@@ -148,7 +148,7 @@ $ hexo deploy //将压缩的静态页面部署到GitHub master分支上用于展
 这样一来，在GitHub上的CJCSDN.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。
 自此hexo安装和部署就全部完成。更换主题，修改配置文件装饰等等后面在慢慢说。
 
-## 博客管理流程
+## 四、博客管理流程
 ### 日常修改
 在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：
 1、依次执行
@@ -175,7 +175,7 @@ $ npm install
 $ npm install hexo-deployer-git //（此时当前分支应显示为hexo，记得，不需要`hexo init`这条指令）
 ```
 然后就可以修改推送等操作了。
-## 参考文献
+## 五、参考文献
 http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more
 https://www.cnblogs.com/visugar/p/6821777.html
 http://dontcry2013.github.io/2016/03/02/hexo-change-workstation/
