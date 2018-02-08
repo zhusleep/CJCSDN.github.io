@@ -8,7 +8,7 @@ tags:
 categories: HEXO
 ---
 ## 一、前言
-过了很久回过头来写这篇文章，算是总结吧。因为一开始就想随便搞个博客啥的玩一下，力求简单简洁，不想自己搞站点啥的。所以找到了GitHub Pages，而且给我们提供域名和空间，省事！Github Pages 需要相应的博客引擎来驱动，主流的有两个 [Hexo](https://hexo.io/) 和 [jekyll](https://jekyllrb.com/)。一开始我用的是jekyll，真真感受到了那句经典的话：从入门到放弃！Orz...。git两者都要，为了push到github。而jekyll需要安装ruby，hexo需要nodejs。两者的官网直观感受和文档介绍详细以及易用性来说，我更倾向于Hexo。于是转用Hexo，后期补写的文章。
+过了很久回过头来写这篇文章，算是总结吧。因为一开始就想随便搞个博客啥的玩一下，力求简单简洁，不想自己搞站点啥的。所以找到了GitHub Pages，而且给我们提供域名和空间，省事！Github Pages 需要相应的博客引擎来驱动，主流的有两个 [Hexo](https://hexo.io/) 和 [jekyll](https://jekyllrb.com/)。一开始我用的是jekyll，真真感受到了那句经典的话：从入门到放弃！Orz...。git两者都要，为了push到github。而jekyll需要安装ruby，hexo需要nodejs。两者的官网直观感受和文档介绍详细以及易用性来说，我更倾向于Hexo。Hexo 是高效的静态站点生成框架，基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。于是转用Hexo，后期补写的文章。
 
 ## 二、配置环境
 ### 申请GitHub
