@@ -49,7 +49,7 @@ User Pages 与 Project Pages的区别是：
 ### 创建master与hexo分支
 创建两个分支：master 与 hexo。master是默认的，所以创建hexo分支并切换将其设为默认，只需要手动管理这个分支上的hexo网站文件。简单地说，每个想建立GitHub Pages的仓库，起码有两个分支，一个（hexo）用来存放Hexo网站的文件，一个（master）用来发布网站。
 1、创建本地分支hexo并切换分支到hexo：`$ git checkout -b hexo` 它是下面两条命令的简写：
-```
+```bash
 $ git branch hexo   //创建分支
 $ git checkout hexo   //切换分支
 ```
@@ -62,46 +62,46 @@ $ git checkout hexo   //切换分支
 7、删除远程分支：`$ git push origin :dev` 这里的dev是远程的分支名称，可以列出分支对应删除不需要的分支。本条慎重使用，请勿失手操作。
 8、合并某分支到当前分支：`$ git merge dev` 这里的dev是分支名称。
 9、如果想把本地的某个分支dev提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫dev的分支，如下：
-```
+```bash
 $ git push origin dev:master         // 提交本地dev分支作为远程的master分支
 $ git push origin dev:dev              // 提交本地dev分支作为远程的test分支
 ```
 
 ### 开始安装HEXO
 1、所有准备完成后，即可使用 npm 安装 [Hexo](https://hexo.io/zh-cn/docs/)。在本地CJCSDN.github.io文件夹下通过Git bash依次执行：
-```
+```bash
 $ npm install -g hexo-cli
 $ hexo init
 $ npm install
 $ npm install hexo-deployer-git //（此时当前分支应显示为hexo，如果不确定请看前面命令列出列表，切换设置为默认分支）
 ```
 2、修改网站的配置信息_config.yml中的deploy参数，分支应为master
-```
+```yml
 deploy:
   type: git
   repo: https://github.com/CJCSDN/CJCSDN.github.io.git
   branch: master
 ```
 3、依次执行
-```
+```bash
 $ git add .             //注意最后的.(点号),这个.(点号)表示当前目录
 $ git commit -m “…”     //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
 $ git push origin hexo  //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
 ```
 4、执行
-```
+```bash
 $ hexo clean        //清除缓存和已生成的静态文件
 $ hexo generate -d  //生成静态文件并部署
 ```
 生成网站并部署到GitHub上。`$ hexo generate -d`它是下面两条命令的简写：
-```
+```bash
 $ hexo generate   //自动生成静态文件 (public)
 $ hexo deploy     //将生成的静态页面部署到GitHub master分支上用于展示
 ```
 如果部署不生效运行 `$ hexo clean` 清除缓存文件 (db.json) 和已生成的静态文件 (public)。然后再运行 `$ hexo deploy clean` 部署到GitHub刷新页面查看。
 ***关于部署这一点做一个延伸：就是生成后的静态文件代码不是压缩的，所以如需要压缩再部署按照如下步骤进行。**
 4-1、在本地站点的根目录（CJCSDN.github.io文件夹下，这是我的站点文件夹。）执行以下命令：
-```
+```bash
 $ npm install gulp -g
 $ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
 ```
@@ -142,7 +142,7 @@ gulp.task('default', [
 ]);
 ```
 替换第4步骤，生成网站并部署到GitHub上依次执行：
-```
+```bash
 $ hexo clean     //清除缓存和已生成的静态文件
 $ hexo generate  //自动生成静态文件 (public)
 $ gulp           //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
@@ -158,13 +158,13 @@ $ hexo deploy    //将压缩的静态页面部署到GitHub master分支上用于
 ### 日常修改
 在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：
 1、依次执行
-```
+```bash
 $ git add .             //注意最后的.(点号),这个.(点号)表示当前目录
 $ git commit -m “…”     //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”
 $ git push origin hexo  //提交网站相关的文件到hexo分支上（此时当前分支应为hexo），便于更换电脑或者重装数据恢复；
 ```
 2、然后再依次执行
-```
+```bash
 $ hexo clean     //清除缓存和已生成的静态文件
 $ hexo generate  //自动生成静态文件 (public)
 $ gulp           //根据 gulpfile.js 中的配置对 public 目录中的静态资源文件进行压缩
@@ -176,7 +176,7 @@ $ hexo deploy    //将压缩的静态页面部署到GitHub master分支上用于
 当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
 1、使用 `$ git clone https://github.com/CJCSDN/CJCSDN.github.io.git` 拷贝仓库（默认分支为hexo）
 2、在本地新拷贝的CJCSDN.github.io文件夹下通过Git bash依次执行下列指令：
-```
+```bash
 $ npm install hexo
 $ npm install
 $ npm install hexo-deployer-git //（此时当前分支应显示为hexo，记得，不需要`hexo init`这条指令）
@@ -184,7 +184,7 @@ $ npm install hexo-deployer-git //（此时当前分支应显示为hexo，记得
 然后就可以修改推送等操作了。
 
 ### 部署常用命令流程
-```
+```bash
 $ hexo new "postName"   //新建文章,hexo官网有详细说明
 $ git add .             //注意最后的.(点号),这个.(点号)表示当前目录
 $ git commit -m “…”     //“引号这里写你要提交的信息，例如：git commit -m “文章更新” ”

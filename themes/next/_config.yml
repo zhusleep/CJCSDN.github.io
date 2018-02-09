@@ -140,7 +140,7 @@ social_icons:
 links_icon: link
 links_title: 友情链接
 links_layout: inline
-#links_layout: inline
+
 links:
   百度搜索: https://www.baidu.com/
   hexo: https://hexo.io/
