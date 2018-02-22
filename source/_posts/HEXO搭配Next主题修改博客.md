@@ -332,7 +332,11 @@ copyright:
 auto_excerpt:
   enable: true
   length: 150
+
+# 开启后使用 <!-more--> 可以实现点击查看全文效果
+scroll_to_more: true
 ```
+
 ### 19、添加字数统计、阅读时长
 在博客文件夹（CJCSDN.github.io）目录下鼠标右键选择`Git Bash Here`执行安装 `hexo-wordcount`：
 ```bash
@@ -375,6 +379,34 @@ post_wordcount:
   {{ min2read(post.content) }} 分钟
 </span>
 ```
+
+### 20、关于图片的问题
+我们想更好的管理我们每篇文章的图片或者资源文件，想单独归类并赋予和文章相同的名称。引用图片的时候的链接也能按照文章时间和名称链接，清楚明了方便管理。这时候就要用到资源文件夹功能，hexo官网也有详细说明：[官网资源文件夹说明链接](https://hexo.io/zh-cn/docs/asset-folders.html)，[参考链接1](https://www.jianshu.com/p/cf0628478a4e)，[参考链接2](http://blog.csdn.net/android_msk/article/details/75040841)，[参考链接3](https://www.jianshu.com/p/c2ba9533088a)
+
+我使用的是：
+1、首先打开配置文件，并搜索 `post_asset_folder` 设置为：
+```yml
+post_asset_folder: true #资源文件夹开启
+```
+2、在博客目录下执行
+```bash
+npm install https://github.com/CodeFalling/hexo-asset-image --save
+```
+hexo new "一个新的博客" 的时候，会自动建立一个与文章同名的文件夹，可以把与该文章相关的所有资源都放到那个文件夹，方便的资源管理。
+3、完成安装后用hexo新建文章命令建立文章，发现_posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。结构如下：
+```
+_posts
+ ├── demo文章
+ |   ├── demo1.jpg
+ |   ├── demo2.jpg
+ |   └── demo3.jpg
+ └── demo文章.md
+```
+4、只要使用 `![demo文章](demo3.jpg)` 插入图片。其中[]里面不写文字则没有图片标题。同时，生成的 html 结构为：
+```html
+<img src="/2017/12/16/demo文章/demo3.jpg" alt="demo文章">
+```
+如需在主页或者列表页、存档页显示图片，详看上面官方资源文件说明和参考链接。
 
 ## 四、自定义样式代码.styl
 ```styl
