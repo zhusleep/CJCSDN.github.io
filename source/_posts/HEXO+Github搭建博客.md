@@ -98,7 +98,7 @@ $ hexo generate -d  //生成静态文件并部署
 $ hexo generate   //自动生成静态文件 (public)
 $ hexo deploy     //将生成的静态页面部署到GitHub master分支上用于展示
 ```
-如果部署不生效运行 `$ hexo clean` 清除缓存文件 (db.json) 和已生成的静态文件 (public)。然后再运行 `$ hexo deploy clean` 部署到GitHub刷新页面查看。
+**如果部署不生效运行 `$ hexo clean` 清除缓存文件 (db.json) 和已生成的静态文件 (public)。然后再运行 `$ hexo deploy clean` 部署到GitHub刷新页面查看。**
 ***关于部署这一点做一个延伸：就是生成后的静态文件代码不是压缩的，所以如需要压缩再部署按照如下步骤进行。**
 4-1、在本地站点的根目录（CJCSDN.github.io文件夹下，这是我的站点文件夹。）执行以下命令：
 ```bash
@@ -175,7 +175,7 @@ $ hexo deploy    //将压缩的静态页面部署到GitHub master分支上用于
 ### 本地资料丢失情况
 当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
 1、使用 `$ git clone https://github.com/CJCSDN/CJCSDN.github.io.git` 拷贝仓库（默认分支为hexo）
-2、在本地新拷贝的CJCSDN.github.io文件夹下通过Git bash依次执行下列指令：
+2、在本地新拷贝的CJCSDN.github.io文件夹下通过Git bash依次执行下列指令(稍微等待一会)：
 ```bash
 $ npm install hexo
 $ npm install
