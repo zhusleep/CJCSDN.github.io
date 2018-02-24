@@ -58,7 +58,6 @@
     {### END PAGE BLOCK ###}
     {######################}
   </div>
-
 {% endblock %}
 
 {% block sidebar %}
