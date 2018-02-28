@@ -9,4 +9,4 @@ categories: hexo
 ```
 D:\myweb\GitHub\CJCSDN.github.io\node_modules\.bin
 ```
-这时候在运行hexo -v,这些hexo的命令就可以正常使用了。如果你有更好的办法请再下面留言，我会积极采纳，谢谢！
+这时候再从新打开你的命令窗口运行hexo -v,这些hexo的命令就可以正常使用了。如果你有更好的办法请再下面留言，我会积极采纳，谢谢！
