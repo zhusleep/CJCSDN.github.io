@@ -12,7 +12,7 @@ categories: git
 ```bash
 $ git remote  //查看远程仓库名字
 $ git remote -v  //查看远程仓库链接
-```   
+```
 查看远程库的的情况，可以看到只有一个叫`origin`的远程库以及远程库fetch和push链接，如下图：![查看远程库](01.png)
 2、接着使用如下命令添加一个远程仓库（这里以coding为例）
 ```bash

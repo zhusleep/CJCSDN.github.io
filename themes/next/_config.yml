@@ -121,6 +121,7 @@ scheme: Mist
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/CJCSDN || github
+  Coding: https://coding.net/
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -142,12 +143,14 @@ links_title: 友情链接
 links_layout: inline
 
 links:
-  本站网址一: https://cjcsdn.github.io/
-  本站网址二: http://cjcsdn.coding.me/
-  百度搜索: https://www.baidu.com/
+  vue: https://cn.vuejs.org/
+  小程序API: https://mp.weixin.qq.com/debug/wxadoc/dev/api/
+  ES6: http://es6.ruanyifeng.com/
+  WEB前端开发: http://www.css88.com/
   hexo: https://hexo.io/
   theme-next: http://theme-next.iissnan.com/
-  岂松网站: http://www.song1990.com/
+  岂松个人站: http://www.song1990.com/
+  小强个人博客: http://blog.csdn.net/qq_24308471
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
