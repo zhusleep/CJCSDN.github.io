@@ -49,6 +49,7 @@
         {% include '_partials/footer.swig' %}
         {% include '_third-party/analytics/analytics-with-widget.swig' %}
         {% block footer %}{% endblock %}
+        <p style="margin:0 auto; font-size:14px;">Hosted by <a href="https://pages.coding.me">Coding Pages</a></p>
       </div>
     </footer>
 
