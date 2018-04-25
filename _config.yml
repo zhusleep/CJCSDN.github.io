@@ -83,4 +83,5 @@ deploy:
   repo: 
     github: https://github.com/CJCSDN/CJCSDN.github.io.git
     coding: https://git.coding.net/cjcsdn/CJCSDN.git
+    gitee: https://gitee.com/CJCSDN/CJCSDN.github.io.git
   branch: master
