@@ -8,7 +8,15 @@ tags:
 categories: 个人记录
 ---
 ### vsCode记录
-![vsCode已安装扩展](01.png)
+vsCode安装扩展：
+1、Atom One Dark Theme；2、Auto Close Tag；3、Auto Rename Tag；4、AutoFileName；5、beautify；6、cssrem；
+7、Debugger for Chrome；8、EasySass；9、EditorConfig for VS Code；10、ESLint；11、Git History；
+12、Git Project Manager；13、GitLens；14、HTML CSS Support；15、HTML SCSS Support；16、HTML Snippets；
+17、 JavaScript Standard Style；18、jQuery Code Snippets；19、language-Stylus；20、Live Sass Compiler；
+21、Live Server；22、Markdown Preview Enhanced；23、npm；24、Npm Intellisense；25、One Dark Pro；
+26、Open HTML in Default Browser；27、Path Intellisense；28、Sass；29、SCSS IntelliSense ；30、Swig；31、TSlint；
+32、Typings auto installer；33、Vetur；34、vscode-icons；35、Vue 2 Snippets；36、Vue VSCode Snippets；37、XML Tools
+
 vsCode用户设置：
 ```json
 {
