@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cjcsdn.github.io/"/>
-  <updated>2018-03-26T07:05:42.957Z</updated>
+  <updated>2018-05-22T08:32:28.035Z</updated>
   <id>https://cjcsdn.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SourceTree免登录跳过初始设置</title>
+    <link href="https://cjcsdn.github.io/2018/05/22/SourceTree%E5%85%8D%E7%99%BB%E5%BD%95%E8%B7%B3%E8%BF%87%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE/"/>
+    <id>https://cjcsdn.github.io/2018/05/22/SourceTree免登录跳过初始设置/</id>
+    <published>2018-05-22T08:09:58.000Z</published>
+    <updated>2018-05-22T08:32:28.035Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2018/05/22/SourceTree免登录跳过初始设置/01.png" alt="SourceTree出现的问题"><br>SourceTree 安装之后需要使用账号登陆以授权。</p><p>安装之后，转到用户本地文件夹下的 SourceTree 目录，没有则新建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%LocalAppData%\Atlassian\SourceTree\</span><br></pre></td></tr></table></figure></p><p>在SourceTree新建 accounts.json 文件<br>文件内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;$id&quot;: &quot;1&quot;,</span><br><span class="line">    &quot;$type&quot;: &quot;SourceTree.Api.Host.Identity.Model.IdentityAccount, SourceTree.Api.Host.Identity&quot;,</span><br><span class="line">    &quot;Authenticate&quot;: true,</span><br><span class="line">    &quot;HostInstance&quot;: &#123;</span><br><span class="line">      &quot;$id&quot;: &quot;2&quot;,</span><br><span class="line">      &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountInstance, SourceTree.Host.AtlassianAccount&quot;,</span><br><span class="line">      &quot;Host&quot;: &#123;</span><br><span class="line">        &quot;$id&quot;: &quot;3&quot;,</span><br><span class="line">        &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountHost, SourceTree.Host.AtlassianAccount&quot;,</span><br><span class="line">        &quot;Id&quot;: &quot;atlassian account&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;BaseUrl&quot;: &quot;https://id.atlassian.com/&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;Credentials&quot;: &#123;</span><br><span class="line">      &quot;$id&quot;: &quot;4&quot;,</span><br><span class="line">      &quot;$type&quot;: &quot;SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account&quot;,</span><br><span class="line">      &quot;Username&quot;: &quot;&quot;,</span><br><span class="line">      &quot;Email&quot;: null</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;IsDefault&quot;: false</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/2018/05/22/SourceTree免登录跳过初始设置/01.png&quot; alt=&quot;SourceTree出现的问题&quot;&gt;&lt;br&gt;SourceTree 安装之后需要使用账号登陆以授权。&lt;/p&gt;
+&lt;p&gt;安装之后，转到用户本地文件夹下的 SourceTre
+      
+    
+    </summary>
+    
+      <category term="SourceTree" scheme="https://cjcsdn.github.io/categories/SourceTree/"/>
+    
+    
+      <category term="SourceTree" scheme="https://cjcsdn.github.io/tags/SourceTree/"/>
+    
+  </entry>
   
   <entry>
     <title>小程序返回顶部</title>
