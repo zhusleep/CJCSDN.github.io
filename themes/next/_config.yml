@@ -44,7 +44,7 @@ footer:
   icon: heart
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright: 
+  copyright:
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: false
@@ -152,6 +152,7 @@ links:
   theme-next: http://theme-next.iissnan.com/
   岂松个人站: http://www.song1990.com/
   小强个人博客: http://blog.csdn.net/qq_24308471
+  豪杰Git库: https://gitee.com/null_920_0490
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -364,7 +365,7 @@ han: false
 # Disqus
 disqus:
   enable: false
-  shortname: 
+  shortname:
   count: true
 
 # Hypercomments
@@ -659,7 +660,7 @@ tabs:
 motion:
   enable: true
   async: false
-  transition: 
+  transition:
     # Transition variants:
     # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
     # swoopIn | swoopOut | whirlIn | whirlOut | shrinkIn | shrinkOut | expandIn | expandOut
